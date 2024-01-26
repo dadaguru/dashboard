@@ -100,7 +100,7 @@ export default function EditDadabadiForm({
         {/* Contact Name*/}
         <div className="mb-4">
           <label htmlFor="contactname" className="mb-2 block text-sm font-medium">
-            Enter contact person's name
+            Enter name of contact person
           </label>
           <div className="relative mt-2 rounded-md">
             <div className="relative">
@@ -761,7 +761,7 @@ export default function EditDadabadiForm({
         >
           Cancel
         </Link>
-        <Button type="submit">Create Dadabadi</Button>
+        <Button type="submit">Update Dadabadi</Button>
       </div>
     </form>
   );

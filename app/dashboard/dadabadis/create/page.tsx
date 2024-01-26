@@ -7,16 +7,16 @@ export default async function Page() {
  
   return (
     <main>
-      {/* <Breadcrumbs
+      <Breadcrumbs
         breadcrumbs={[
           { label: 'Dadabadis', href: '/dashboard/dadabadis' },
           {
-            label: 'Create Invoice',
+            label: 'Create Dadabadi',
             href: '/dashboard/dadabadis/create',
             active: true,
           },
         ]}
-      /> */}
+      />
       <Form indiastates={indiastates} />
     </main>
   );
