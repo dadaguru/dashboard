@@ -18,16 +18,41 @@ import {
   NewspaperIcon,
   HandRaisedIcon,
   PhotoIcon,
-  PencilIcon
+  PencilIcon,
+  ArrowPathIcon
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
 import { createDadabadi } from '@/app/lib/dadabadiactions';
 import { useFormState } from 'react-dom';
-
+import ImageUpload from '@/app/components/image-upload';
+import { UploadButton } from "@/utils/uploadthing";
+import { useState } from 'react';
+import Image from 'next/image';
+import axios from 'axios';
 
 export default function Form({ indiastates }: { indiastates: IndiaStatesField[] }) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createDadabadi, initialState);
+  const [image1, setImage1] = useState<string>('');
+  const [image2, setImage2] = useState<string>('');
+  const [image1IsDeleting, setImage1IsDeleting] = useState(false);
+  const [image2IsDeleting, setImage2IsDeleting] = useState(false);
+
+  const handleDeleteImage = async (imgUrl:string, whichImg:string) => {
+    (whichImg === "image2") ? setImage2IsDeleting(true) : setImage1IsDeleting(true);
+    const imgKey = imgUrl.substring(imgUrl.lastIndexOf('/') + 1);    
+    axios.post(`/api/uploadthing/delete`, {imgKey})
+    .then((res:any) => {      
+      if(res.data.success){
+        (whichImg === "image2") ? setImage2('') : setImage1('');
+      }
+    }).catch((error) => {
+      console.log("error in deleting image :", error)
+    }).finally(() => {
+      (whichImg === "image2") ? setImage2IsDeleting(false) : setImage1IsDeleting(false);
+    })    
+  }
+
   return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -594,16 +619,44 @@ export default function Form({ indiastates }: { indiastates: IndiaStatesField[] 
             Upload First Image
           </label>
           <div className="relative mt-2 rounded-md">
-            <div className="relative">
+            <div className="relative bg-indigo-100 p-2 rounded-md">
+              {image1 ? (
+                <>
+                  <div className="relative">
+                    <Image className="object-fill h-auto w-full" src={image1} alt='my image' width={500} height={500}/>
+                    <button className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                      onClick={() => handleDeleteImage(image1 , "image1")}>
+                        {image1IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
+                          <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
+                        }
+                    </button>
+                  </div>
+                </>
+              ) : 
+              (<>
+              <UploadButton
+                endpoint='imageUploader'
+                onClientUploadComplete={(res) => {
+                  // Do something with the response
+                  setImage1(res[0].url);
+                  console.log("Files: ", res);
+                  alert("Upload Completed");
+                }}
+                onUploadError={(error: Error) => {
+                  // Do something with the error.
+                  alert(`ERROR! ${error.message}`);
+                }}
+              />
+              </>)}
               <input
                 id="image1"
                 name="image1"
-                type="text"                
+                type="hidden"
+                defaultValue={image1}
                 placeholder="Upload First Image"
                 aria-describedby="image1-error"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              />
-              <PhotoIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              />              
             </div>
             <div id="image1-error" aria-live="polite" aria-atomic="true">
               {state.errors?.image1 &&
@@ -622,16 +675,44 @@ export default function Form({ indiastates }: { indiastates: IndiaStatesField[] 
             Upload Second Image
           </label>
           <div className="relative mt-2 rounded-md">
-            <div className="relative">
+            <div className="relative bg-indigo-100 p-2 rounded-md">
+            {image2 ? (
+                <>
+                  <div className="relative">
+                    <Image className="object-fill h-auto w-full" src={image2} alt='my image' width={500} height={500}/>
+                    <button className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                      onClick={() => handleDeleteImage(image2, "image2")}>
+                        {image2IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
+                          <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
+                        }
+                    </button>
+                  </div>
+                </>
+              ) : 
+              (<>
+              <UploadButton
+                endpoint='imageUploader'
+                onClientUploadComplete={(res) => {
+                  // Do something with the response
+                  setImage2(res[0].url);
+                  console.log("Files: ", res);
+                  alert("Upload Completed");
+                }}
+                onUploadError={(error: Error) => {
+                  // Do something with the error.
+                  alert(`ERROR! ${error.message}`);
+                }}
+              />
+              </>)}
               <input
                 id="image2"
                 name="image2"
-                type="text"                
+                type="hidden"
+                defaultValue={image2}
                 placeholder="Upload Second Image"
                 aria-describedby="image2-error"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              />
-              <PhotoIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              />              
             </div>
             <div id="image2-error" aria-live="polite" aria-atomic="true">
               {state.errors?.image2 &&
