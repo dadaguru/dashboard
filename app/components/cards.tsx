@@ -83,7 +83,7 @@ export function Card({
   const Icon = iconMap[type];
   return (
     <>
-      <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
+      <div className="rounded-xl bg-gray-200 p-2 shadow-sm">
         <div>
           <div className="flex justify-between text-base font-medium text-gray-900">
             <h3 className="ml-1 text-sm font-medium">
@@ -105,11 +105,15 @@ export function Card({
         
         <div className="flex py-2">
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-            <img
-              src='https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg'
+            {(dadabadi.image1 !== "") ? <img
+              src={dadabadi.image1}
               alt='alt'
               className="h-full w-full object-cover object-center"
-            />
+            /> : <img
+            src='/images/landingpage.jpg'
+            alt='alt'
+            className="h-full w-full object-cover object-center"
+          />}
           </div>
 
           <div className="ml-2 flex flex-1 flex-col">
