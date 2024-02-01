@@ -10,6 +10,8 @@ import { fetchFilteredDadabadis } from '@/app/lib/dadabadidata';
 
 import { MapPinned, Utensils, BedDouble, ThumbsUp} from 'lucide-react';
 import { DadabadiTable } from '../lib/dadabadidefinitions';
+import Link from 'next/link';
+import {DetailDadabadi} from '@/app/components/buttons'
 
 const iconMap = {
   socialmediaurl: ThumbsUp,
@@ -123,7 +125,11 @@ export function Card({
             <div className="flex flex-1 items-end justify-between text-sm">
               <p className="text-gray-500">{dadabadi.contactnumber}</p>
               <div className="flex px-1">
-                <a href="#" className="text-gray-500 rounded-md bg-gray-50 hover:text-gray-900 hover:bg-gray-100 font-medium text-sm">Detail</a>
+              <DetailDadabadi id={dadabadi.id} />
+                
+                {/* <a href='/detail/'{dadabadi.id} className="text-gray-500 rounded-md bg-gray-50 hover:text-gray-900 hover:bg-gray-100 font-medium text-sm">
+                  Detail
+                </a> */}
               </div>
             </div>
           </div>

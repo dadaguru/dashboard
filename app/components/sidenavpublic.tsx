@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NavLinks from '@/app/components/nav-links-public';
-import AcmeLogo from '@/app/ui/acme-logo';
+import DadabadiLogo from '@/app/ui/dadabadi-logo';
 import { ArrowRightIcon, PowerIcon } from '@heroicons/react/24/outline';
 import { signOut } from '@/auth';
 
@@ -12,27 +12,18 @@ export default function SideNav() {
         href="/"
       >
         <div className="w-32 text-white md:w-40">
-          <AcmeLogo />
+          <DadabadiLogo />
         </div>
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
         <Link
-            href="/login"
-            className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:flex-none md:justify-start md:p-2 md:px-3"
-          >
-            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
-          </Link>
-        {/* <form action={async () => {
-            'use server';
-            await signOut();
-          }}>           
-          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
-            <ArrowRightIcon className="w-6" />
-            <div className="hidden md:block">Log in</div>
-          </button>
-        </form> */}
+          href="/login"
+          className="flex h-[48px] grow items-center justify-center gap-2 rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:flex-none md:justify-start md:p-2 md:px-3"
+        >
+          <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
+        </Link>        
       </div>
     </div>
   );

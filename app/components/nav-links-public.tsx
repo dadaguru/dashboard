@@ -6,20 +6,27 @@ import {
   BuildingLibraryIcon,
   ChatBubbleBottomCenterIcon,
   ChatBubbleBottomCenterTextIcon,
+  SquaresPlusIcon,
 } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import { BadgePlus } from 'lucide-react';
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
   { name: 'Home', href: '/', icon: HomeIcon },
   {
-    name: 'DdBds',
+    name: 'Dadabadis',
     href: '/dadabadis',
     icon: BuildingLibraryIcon,
+  },
+  {
+    name: 'Dadabadi Create',
+    href: '/dadabadis/create',
+    icon: SquaresPlusIcon,
   },
   {
     name: 'Contact',

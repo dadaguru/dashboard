@@ -30,7 +30,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
 
-export default function Form({ indiastates }: { indiastates: IndiaStatesField[] }) {
+export default function Form({ indiastates, whichPage}: { indiastates: IndiaStatesField[], whichPage:string}) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createDadabadi, initialState);
   const [image1, setImage1] = useState<string>('');
@@ -51,6 +51,10 @@ export default function Form({ indiastates }: { indiastates: IndiaStatesField[] 
     }).finally(() => {
       (whichImg === "image2") ? setImage2IsDeleting(false) : setImage1IsDeleting(false);
     })    
+  }
+
+  const sendCreateMail = () => {
+    console.log("send create email clicked");
   }
 
   return (
@@ -760,7 +764,11 @@ export default function Form({ indiastates }: { indiastates: IndiaStatesField[] 
         >
           Cancel
         </Link>
-        <Button type="submit">Create Dadabadi</Button>
+        {whichPage === 'create' ? 
+          <Button type="submit">Create Dadabadi</Button> :
+          <Button onClick={() => {sendCreateMail()}}>Send Email</Button>
+        }
+        
       </div>
     </form>
   );

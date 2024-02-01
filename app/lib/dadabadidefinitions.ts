@@ -31,17 +31,21 @@ export type Revenue = {
   revenue: number;
 };
 
-export type LatestInvoice = {
+export type LatestDadabadi = {
   id: string;
-  name: string;
-  image_url: string;
-  email: string;
-  amount: string;
+  title: string;
+  titlehin: string;
+  published: string;
+  image1: string;
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function
-export type LatestDadabadiRaw = Omit<LatestInvoice, 'amount'> & {
-  amount: number;
+export type LatestDadabadiRaw = {
+  id: string;
+  title: string;
+  titlehin: string;
+  published: string;
+  image1: string;
 };
 
 export type DadabadiTable = {

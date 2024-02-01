@@ -20,7 +20,7 @@ const links = [
     icon: DocumentDuplicateIcon,
   },
   {
-    name: 'DdBds',
+    name: 'Dadabadis',
     href: '/dashboard/dadabadis',
     icon: BuildingLibraryIcon,
   },

@@ -27,26 +27,25 @@ export default async function DadabadisTable({
                 <div className="flex items-center justify-between border-b pb-4">
                   <div>
                     <div className="mb-2 flex items-center">
-                      {/* <Image
-                        src={dadabadi.image1}
+                      <Image
+                        src='/customers/emil-kowalski.png'
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
-                        alt={`${dadabadi.title}'s picture`}
-                      /> */}
-                      <p>{dadabadi.title} hi</p>
+                        alt={`${dadabadi.title}'s dadabadi picture`}
+                      />
+                      <p>{dadabadi.title}</p>
                     </div>
-                    <p className="text-sm text-gray-500">{dadabadi.email}</p>
+                    <p className="text-sm text-gray-500">{dadabadi.contactnumber}</p>
                   </div>
-                  {/* <InvoiceStatus status={dadabadi.published} /> */}
-                  <p>{dadabadi.published}</p>
+                  <PublishStatus status={dadabadi.published} />                  
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
                   <div>
                     <p className="text-xl font-medium">
-                      {dadabadi.address}
+                      {dadabadi.titlehin}
                     </p>
-                    <p>{formatDateToLocal(dadabadi.created_at)}</p>
+                    <p className="text-xs font-small">{formatDateToLocal(dadabadi.created_at)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdateDadabadi id={dadabadi.id} />
@@ -64,10 +63,7 @@ export default async function DadabadisTable({
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
                   Name
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  State
-                </th>
+                </th>                
                 <th scope="col" className="px-3 py-5 font-medium">
                   Contact Name
                 </th>
@@ -96,22 +92,19 @@ export default async function DadabadisTable({
                 >
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
-                      {/* <Image
-                        src={dadabadi.image2}
+                      <Image
+                        src='/customers/emil-kowalski.png'
                         className="rounded-full"
                         width={28}
                         height={28}
-                        alt={`${dadabadi.title}'s profile picture`}
-                      /> */}
+                        alt={`${dadabadi.title}'s dadabadi picture`}
+                      />
                       <p>{dadabadi.title}</p>
                     </div>
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {dadabadi.titlehin}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
-                    {dadabadi.state}
-                  </td>
+                  </td>                 
                   <td className="whitespace-nowrap px-3 py-3">
                     {dadabadi.contactname}
                   </td>

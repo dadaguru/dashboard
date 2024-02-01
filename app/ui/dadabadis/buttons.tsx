@@ -36,3 +36,15 @@ export function DeleteDadabadi({ id }: { id: string }) {
     </form>
   );
 }
+
+
+export function DetailDadabadi({ id }: { id: string }) {
+  return (
+    <Link
+    href={`/dadabadis/${id}/detail`}
+      className="rounded-md border p-2 hover:bg-gray-100"
+    > Detail
+      <PencilIcon className="w-5" />
+    </Link>
+  );
+}

@@ -9,6 +9,7 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
+import Link from 'next/link';
 
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -60,6 +61,12 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
+        <Link
+            href="/dadabadis"
+            className="flex items-center mt-4 gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+          >
+            <span>Go to HomePage</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link>
         
           {/* Add form errors here */}
           <div

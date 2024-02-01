@@ -9,25 +9,23 @@ import {
 import { formatCurrency } from './utils';
 import { DadabadiField, IndiaStatesField } from '@/app/lib/dadabadidefinitions';
 
-
-export async function fetchLatestInvoices() {
+export async function fetchLatestDadabadis() {
   noStore();
   try {
     const data = await sql<LatestDadabadiRaw>`
-      SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
-      FROM invoices
-      JOIN customers ON invoices.customer_id = customers.id
-      ORDER BY invoices.date DESC
+      SELECT dadabadis.title, dadabadis.titlehin, dadabadis.image1, dadabadis.published, dadabadis.id
+      FROM dadabadis      
+      ORDER BY dadabadis.created_at DESC
       LIMIT 5`;
 
-    const latestInvoices = data.rows.map((invoice) => ({
-      ...invoice,
-      amount: formatCurrency(invoice.amount),
+    const latestDadabadis = data.rows.map((dadabadi) => ({
+      ...dadabadi,
+      published: dadabadi.published,
     }));
-    return latestInvoices;
+    return latestDadabadis;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch the latest invoices.');
+    throw new Error('Failed to fetch the latest Dadabadis.');
   }
 }
 
@@ -133,9 +131,7 @@ export async function fetchDadabadiById(id: string) {
     `;
 
     const dadabadi = data.rows.map((dadabadi) => ({
-      ...dadabadi,
-      // Convert amount from cents to dollars
-      //amount: invoice.amount / 100,
+      ...dadabadi,      
     }));
 
     return dadabadi[0];
