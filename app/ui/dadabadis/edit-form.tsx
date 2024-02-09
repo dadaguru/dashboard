@@ -25,7 +25,7 @@ import {
 import { Button } from '@/app/ui/button';
 import { updateDadabadi } from '@/app/lib/dadabadiactions';
 import { useFormState } from 'react-dom';
-import { useState } from 'react';
+import { EventHandler, useState } from 'react';
 import { UploadButton } from "@/utils/uploadthing";
 import Image from 'next/image';
 import axios from 'axios';
@@ -45,13 +45,21 @@ export default function EditDadabadiForm({
   const [image1IsDeleting, setImage1IsDeleting] = useState(false);
   const [image2IsDeleting, setImage2IsDeleting] = useState(false);
 
-  const handleDeleteImage = async (imgUrl:string, whichImg:string) => {
+  const handleDeleteImage = async (e:Event, imgUrl:string, whichImg:string) => {
+    
     (whichImg === "image2") ? setImage2IsDeleting(true) : setImage1IsDeleting(true);
     const imgKey = imgUrl.substring(imgUrl.lastIndexOf('/') + 1);    
     axios.post(`/api/uploadthing/delete`, {imgKey})
-    .then((res:any) => {      
+    .then((res:any) => {
+      
+      
+      console.log("res in handle delete :", res, "whichImg :", whichImg);
+
       if(res.data.success){
+       
+         
         (whichImg === "image2") ? setImage2('') : setImage1('');
+       
       }
     }).catch((error) => {
       console.log("error in deleting image :", error)
@@ -650,12 +658,12 @@ export default function EditDadabadiForm({
                 <>
                   <div className="relative">
                     <Image className="object-fill h-auto w-full" src={image1} alt='my image' width={500} height={500}/>
-                    <button className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
-                      onClick={() => handleDeleteImage(image1 , "image1")}>
+                    <Button type="button" className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                      onClick={(e:any) => handleDeleteImage(e,image1,"image1")}>
                         {image1IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
                           <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
                         }
-                    </button>
+                    </Button>
                   </div>
                 </>
               ) : 
@@ -728,12 +736,12 @@ export default function EditDadabadiForm({
                 <>
                   <div className="relative">
                     <Image className="object-fill h-auto w-full" src={image2} alt='my image' width={500} height={500}/>
-                    <button className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
-                      onClick={() => handleDeleteImage(image2, "image2")}>
+                    <Button type="button" className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                      onClick={(e:any) => handleDeleteImage(e,image2,"image2")}>
                         {image2IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
                           <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
                         }
-                    </button>
+                    </Button>
                   </div>
                 </>
               ) : 

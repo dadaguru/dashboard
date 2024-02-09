@@ -628,12 +628,12 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 <>
                   <div className="relative">
                     <Image className="object-fill h-auto w-full" src={image1} alt='my image' width={500} height={500}/>
-                    <button className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                    <Button type="button" className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
                       onClick={() => handleDeleteImage(image1 , "image1")}>
                         {image1IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
                           <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
                         }
-                    </button>
+                    </Button>
                   </div>
                 </>
               ) : 
@@ -684,12 +684,12 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 <>
                   <div className="relative">
                     <Image className="object-fill h-auto w-full" src={image2} alt='my image' width={500} height={500}/>
-                    <button className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                    <Button type="button" className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
                       onClick={() => handleDeleteImage(image2, "image2")}>
                         {image2IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
                           <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
                         }
-                    </button>
+                    </Button>
                   </div>
                 </>
               ) : 

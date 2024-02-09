@@ -11,7 +11,8 @@ export async function POST(req: Request) {
   const user = await auth(req);  
   if (!user) throw new Error("Unauthorized");
   try {
-    const res = await utapi.deleteFiles(imgKey);    
+    const res = await utapi.deleteFiles(imgKey);
+    console.log("res in utapi delete :", res);
     return NextResponse.json(res);
   } catch (error) {
     console.log("error in deleting image from uploadthing :", error);

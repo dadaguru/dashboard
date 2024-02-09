@@ -1,5 +1,5 @@
 import Form from '@/app/ui/dadabadis/edit-form';
-import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
+import Breadcrumbs from '@/app/ui/dadabadis/breadcrumbs';
 import { fetchDadabadiById, fetchIndiaStates } from '@/app/lib/dadabadidata';
 import { notFound } from 'next/navigation';
 import DadabadiDetail from '@/app/components/dadabadi-detail';

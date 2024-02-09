@@ -4,7 +4,7 @@ import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { Suspense } from 'react';
 import { CustomersTableSkeleton  } from '@/app/ui/skeletons';
 import Table from '@/app/ui/customers/table';
-import Pagination from '@/app/ui/invoices/pagination';
+import Pagination from '@/app/ui/dadabadis/pagination';
 import { fetchFilteredCustomers } from '@/app/lib/data';
 import { Metadata } from 'next';
 

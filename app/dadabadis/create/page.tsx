@@ -4,7 +4,7 @@ import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { Suspense } from 'react';
 
 import Form from '@/app/ui/dadabadis/create-form';
-import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
+import Breadcrumbs from '@/app/ui/dadabadis/breadcrumbs';
 import { fetchIndiaStates } from '@/app/lib/dadabadidata';
 
 import { Metadata } from 'next';

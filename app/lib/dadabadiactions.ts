@@ -24,8 +24,8 @@ const FormSchema = z.object({
   }),
   contactnumber: z.string({ invalid_type_error: 'Please provide contact number.' }),
   maplink: z.string({ invalid_type_error: 'Please provide google map link.' }),
-  image1: z.string({ invalid_type_error: 'Please upload an external image of dadabadi.' }),
-  image2: z.string({ invalid_type_error: 'Please upload an internal image of dadabadi.' }),
+  image1: z.string({ invalid_type_error: 'Please upload an external image of dadabadi.' }).default('image1').optional(),
+  image2: z.string({ invalid_type_error: 'Please upload an internal image of dadabadi.' }).default('image2').optional(),
   state: z.string({ invalid_type_error: 'Please select state.' }),
   city: z.string({ invalid_type_error: 'Please provide name of area where dadabadi is located.' }),
   description: z.string({ invalid_type_error: 'Please provide the importance of this dadabadi.' }),
@@ -268,7 +268,7 @@ export async function updateDadabadi(
     console.log("error is :", error);
     return { message: 'Database Error: Failed to Update Dadabadi.' };
   }
-
+  console.log("inside dadaadi action update dadabadi path")
   revalidatePath('/dashboard/dadabadis');
   redirect('/dashboard/dadabadis');
 }

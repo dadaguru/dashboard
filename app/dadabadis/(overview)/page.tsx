@@ -1,4 +1,4 @@
-import Pagination from '@/app/ui/invoices/pagination';
+import Pagination from '@/app/ui/dadabadis/pagination';
 import Search from '@/app/ui/search';
 import Table from '@/app/ui/dadabadis/table';
 import { CreateInvoice } from '@/app/ui/invoices/buttons';
