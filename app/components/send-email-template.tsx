@@ -18,28 +18,22 @@ import {
 import * as React from "react";
 
 interface ContactEmailTemplateProps {
-  userFirstName?: string;
-  loginDate?: Date;
-  loginDevice?: string;
-  loginLocation?: string;
-  loginIp?: string;
+  name? : string;
+  senderEmail? : string;
+  senderNumber? : string;
+  message? : string;
 }
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const ContactEmailTemplate = ({
-  userFirstName,
-  loginDate,
-  loginDevice,
-  loginLocation,
-  loginIp,
-}: ContactEmailTemplateProps) => {
-  const formattedDate = new Intl.DateTimeFormat("en", {
-    dateStyle: "long",
-    timeStyle: "short",
-  }).format(loginDate);
+export const ContactEmailTemplate = ({  
+  name,
+  senderEmail,
+  senderNumber,
+  message,
+}: ContactEmailTemplateProps) => { 
 
   return (
     <Html>
@@ -48,7 +42,7 @@ export const ContactEmailTemplate = ({
       <Body style={main}>
         <Container>
           <Section style={logo}>
-            <Img src={`${baseUrl}/static/yelp-logo.png`} />
+            <Img src={`${baseUrl}/images/yelp-logo.png`} />
           </Section>
 
           <Section style={content}>
@@ -56,7 +50,7 @@ export const ContactEmailTemplate = ({
               <Img
                 style={image}
                 width={620}
-                src={`${baseUrl}/static/yelp-header.png`}
+                src={`${baseUrl}/images/yelp-header.png`}
               />
             </Row>
 
@@ -69,7 +63,7 @@ export const ContactEmailTemplate = ({
                     textAlign: "center",
                   }}
                 >
-                  Hi {userFirstName},
+                  Hi {name},
                 </Heading>
                 <Heading
                   as="h2"
@@ -79,46 +73,26 @@ export const ContactEmailTemplate = ({
                     textAlign: "center",
                   }}
                 >
-                  We noticed a recent login to your Yelp account.
+                  Thank you for contacting us through contact form at www.dadaguru.in, you have submitted
+                  the following details.
                 </Heading>
 
                 <Text style={paragraph}>
-                  <b>Time: </b>
-                  {formattedDate}
+                  <b>Your Email: </b>
+                  {senderEmail}
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
-                  <b>Device: </b>
-                  {loginDevice}
+                  <b>Your Contact Number: </b>
+                  {senderNumber}
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
-                  <b>Location: </b>
-                  {loginLocation}
+                  <b>Your message: </b>                  
                 </Text>
-                <Text
-                  style={{
-                    color: "rgb(0,0,0, 0.5)",
-                    fontSize: 14,
-                    marginTop: -5,
-                  }}
-                >
-                  *Approximate geographic location based on IP address:
-                  {loginIp}
-                </Text>
-
                 <Text style={paragraph}>
-                  If this was you, there&apos;s nothing else you need to do.
-                </Text>
-                <Text style={{ ...paragraph, marginTop: -5 }}>
-                  If this wasn&apos;t you or if you have additional questions, please
-                  see our support page.
-                </Text>
+                  {message}
+                </Text>                
               </Column>
-            </Row>
-            <Row style={{ ...boxInfos, paddingTop: "0" }}>
-              <Column style={containerButton} colSpan={2}>
-                <Button style={button}>Learn More</Button>
-              </Column>
-            </Row>
+            </Row>            
           </Section>
 
           <Section style={containerImageFooter}>
@@ -136,8 +110,7 @@ export const ContactEmailTemplate = ({
               color: "rgb(0,0,0, 0.7)",
             }}
           >
-            © 2022 | Yelp Inc., 350 Mission Street, San Francisco, CA 94105,
-            U.S.A. | www.yelp.com
+            © 2024 | www.dadaguru.in           
           </Text>
         </Container>
       </Body>
@@ -145,12 +118,11 @@ export const ContactEmailTemplate = ({
   );
 };
 
-ContactEmailTemplate.PreviewProps = {
-  userFirstName: "Alan",
-  loginDate: new Date("September 7, 2022, 10:58 am"),
-  loginDevice: "Chrome on Mac OS X",
-  loginLocation: "Upland, California, United States",
-  loginIp: "47.149.53.167",
+ContactEmailTemplate.PreviewProps = {  
+  name : "testname",
+  senderEmail : "test@dadaguru.in",
+  senderNumber : "1234567890",
+  message : "testmessage",
 } as ContactEmailTemplateProps;
 
 export default ContactEmailTemplate;
