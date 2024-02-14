@@ -1,35 +1,48 @@
-import { EmailTemplate } from '@/app/components/email-template';
 import { Resend } from 'resend';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import * as React from 'react';
-
+import ContactEmailTemplate from '@/app/components/send-email-template';
+import { redirect } from 'next/navigation'
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request:any) {
+export async function POST(request:NextRequest) {
   try {
     const body = await request.json();
-    console.log("email body is mail :", body);
-    const {name, email, message } = body;
+    console.log("email body in api call :", body);
+    console.log("ip in api call :", request.ip);
+    console.log("request.geo.city in api call :", request.geo?.city);
+    console.log("ip x forwarded for in api call :", request.headers.get('X-Forwarded-For'));
+    const {
+      name,
+      senderEmail,
+      senderNumber,
+      message
+     } = body;
     const { data, error } = await resend.emails.send({
       from: 'Dadabadi <info@therichdesigns.com>',
-      to: email,
-      subject: "Hello dadabadis",
-      react: EmailTemplate({ firstName: name}) as React.ReactElement,
+      to: senderEmail as string,
+      //cc: ["dadaguruweb@gmail.com"],
+      //bcc: "yatindrajain@gmail.com",
+      subject: "Jai Jinendra from www.dadaguru.in",
+      reply_to: senderEmail as string,
+      react: ContactEmailTemplate({
+        name: name as string,
+        senderEmail: senderEmail as string,
+        senderNumber: senderNumber as string,
+        message: message as string
+      }) as React.ReactElement,
     });
-
     console.log("data in resend meail res :", data);
-
-    console.log("eroor in resend meail res :", error);
-    
+    console.log("eroor in resend meail res :", error);    
     if (error) {
-      return Response.json({ error });
+      return NextResponse.json({ message : error.message });
     }
 
     if(data){
-      return NextResponse.json({message : 'email send successfully'});
+      return NextResponse.json({message : 'Email sent successfully'});
     }
-
-    return NextResponse.json({ data });
+    console.log("hahahaha")
+    //redirect('/dadabadis/contact');
   } catch (error) {
     return NextResponse.json({ error });
   }

@@ -9,6 +9,7 @@ import { sendEmail } from '@/app/lib/sendEmail';
 
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import ContactForm from '@/app/ui/dadabadis/contact-form';
 
 export const metadata: Metadata = {
   title: 'Customers',
@@ -77,11 +78,11 @@ export default async function Page() {
           <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
             <section className="bg-white dark:bg-gray-900">
               <div className="py-8 lg:py-0 px-4 mx-auto max-w-screen-md">
-
+                  <ContactForm />
 
                 {/* <form className="space-y-8" onSubmit={handleSubmit} > */}
 
-                <form className="space-y-8"
+               {/*  <form className="space-y-8"
                   action={async (formData) => {
                     'use server';
                     console.log("reached here", formData);
@@ -118,7 +119,7 @@ export default async function Page() {
                   </div>
                   <button type='submit' className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                     Send message</button>
-                </form>
+                </form> */}
               </div>
             </section>
           </div>

@@ -38,7 +38,7 @@ export const ContactEmailTemplate = ({
   return (
     <Html>
       <Head />
-      <Preview>Yelp recent login</Preview>
+      <Preview>दादाबाड़ी वेब साईट से सादर जय जिनेन्द्र</Preview>
       <Body style={main}>
         <Container>
           <Section style={logo}>
