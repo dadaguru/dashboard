@@ -18,7 +18,12 @@ const links = [
     name: 'Dadabadis',
     href: '/dashboard/dadabadis',
     icon: BuildingLibraryIcon,
-  }  
+  },
+  {
+    name: 'Upload Dadabadi Data',
+    href: '/dashboard/dadabadisupload',
+    icon: BuildingLibraryIcon,
+  }
 ];
 
 export default function NavLinks() {

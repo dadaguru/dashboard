@@ -18,9 +18,9 @@ import {
 import * as React from "react";
 
 interface CreateDadabadiEmailTemplateProps {
-  senderName?: string;
-  senderEmail?: string;
-  senderNumber?: string;
+  sendername?: string;
+  senderemail?: string;
+  sendernumber?: string;
   title?: string;
   titlehin?: string;
   trustname?: string;
@@ -49,8 +49,8 @@ const baseUrl = process.env.VERCEL_URL
   : "";
 
 export const CreateDadabadiEmailTemplate = ({
-  senderName,
-  senderNumber,
+  sendername,
+  sendernumber,
   title,
   titlehin,
   trustname,
@@ -100,7 +100,7 @@ export const CreateDadabadiEmailTemplate = ({
                     textAlign: "center",
                   }}
                 >
-                  Jai Jinendra {senderName} Ji,
+                  Jai Jinendra {sendername} Ji,
                 </Heading>
                 <Heading
                   as="h2"
@@ -111,7 +111,8 @@ export const CreateDadabadiEmailTemplate = ({
                   }}
                 >
                   Thank you for contacting us through contact form at www.dadaguru.in, you have submitted
-                  the following details. We have sent Thank you message to your mobile number {senderNumber}.
+                  the following details. We shall reach out to your mobile number {sendernumber}, if we have any
+                  questions.
                 </Heading>
                 <Text style={paragraph}>
                   <b>City : </b>
@@ -223,8 +224,8 @@ export const CreateDadabadiEmailTemplate = ({
 };
 
 CreateDadabadiEmailTemplate.PreviewProps = {
-  senderName : "senderName",
-  senderNumber : "senderNumber",
+  sendername : "sendername",
+  sendernumber : "sendernumber",
   title : "title",
   titlehin : "titlehin",
   trustname : "trustname",

@@ -15,9 +15,9 @@ export async function POST(request: NextRequest, response: NextResponse) {
     console.log("email body in api call :", body);
 
     const {
-      senderName,
-      senderEmail,
-      senderNumber,
+      sendername,
+      senderemail,
+      sendernumber,
       title,
       titlehin,
       trustname,
@@ -47,12 +47,12 @@ export async function POST(request: NextRequest, response: NextResponse) {
 
     const { data, error } = await resend.emails.send({
       from: 'Dadabadi <info@therichdesigns.com>',
-      to: senderEmail as string,
+      to: senderemail as string,
       cc: ["dadaguruweb@gmail.com"],
       bcc: "yatindrajain@gmail.com",
       subject: "Jai Jinendra from www.dadaguru.in",
-      reply_to: senderEmail as string,
-
+      reply_to: senderemail as string,
+      
       react: CreateDadabadiEmailTemplate({
         title : title as string,
         titlehin : titlehin as string,
@@ -66,8 +66,8 @@ export async function POST(request: NextRequest, response: NextResponse) {
         dharmshala : dharmshala as string,
         contactnumber : contactnumber as string,
         maplink : maplink as string,
-        image1 : image1 as string,
-        image2 : image2 as string,
+        image1 : image1 as string || "",
+        image2 : image2 as string || "",
         state : state as string,
         city : city as string,
         description : description as string,
@@ -75,20 +75,22 @@ export async function POST(request: NextRequest, response: NextResponse) {
         contactname : contactname as string,
         moolnayakname : moolnayakname as string,
         dadaguruname : dadaguruname as string,
-        senderName : senderName as string,
-        senderNumber : senderNumber as string,
+        sendername : sendername as string,
+        sendernumber : sendernumber as string,
       }) as React.ReactElement,
-      attachments: [
+      
+      attachments : [
         {
-          content: content,
-          filename: filename,
+          content: content || null,
+          filename: filename || "",
         },
         {
-          content: content2,
-          filename: filename2,
+          content: content2 || null,
+          filename: filename2 || "",
         }
       ],
     });
+
     console.log("data in resend meail res :", data);
     console.log("eroor in resend meail res :", error);
     if (error) {
@@ -101,6 +103,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
     console.log("hahahaha")
     //redirect('/dadabadis/contact');
   } catch (error) {
+    console.log("error in api", error);
     return NextResponse.json({ error });
   }
 }
