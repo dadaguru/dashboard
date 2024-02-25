@@ -1,7 +1,7 @@
 'use client';
 import { clsx } from 'clsx';
 import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
+import { mukta } from '@/app/ui/fonts';
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
 import { uploadDadabadi } from '@/app/lib/dadabadiactions';
@@ -68,20 +68,19 @@ export default function ExcelImport() {
       <div>
         <form>
           <label htmlFor="file-input-medium" className="sr-only">Choose file</label>
-          <input type="file" name="file-input-medium" id="file-input-medium" className="block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
-            file:bg-gray-50 file:border-0
+          <input type="file" name="file-input-medium" id="file-input-medium" className="block w-full bg-white text-red border border-keshar-saffronRedDark shadow-sm rounded-lg text-sm focus:z-10 focus:border-amber-500 focus:ring-amber-500 disabled:opacity-50 disabled:pointer-events-none
+            file:bg-amber-500 file:border-0
             file:me-2
-            file:py-3 file:px-4
-            dark:file:bg-gray-700 dark:file:text-gray-400"
+            file:py-3 file:px-4"
             onChange={(e: any) => {
               const file = e.target.files[0];
               readExcel(file);
             }} />
-          <p className="m-2 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">MS Excel (.xlsx) files only.</p>
+          <p className="m-2 text-sm text-keshar-saffronRedDark" id="file_input_help">MS Excel (.xlsx) files only.</p>
           {insertSuccess && (
             <>
               <div className='mt-4 mb-4'>
-                <label>Error in data of excel file</label>               
+                <label>Data uploaded successfully</label>               
               </div>
               {insertSuccess.map((succ, index) => (
                 <div key={index} className="mb-2 text-xs">

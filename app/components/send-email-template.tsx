@@ -99,7 +99,7 @@ export const ContactEmailTemplate = ({
             <Img
               style={image}
               width={620}
-              src={`${baseUrl}/static/yelp-footer.png`}
+              src={`${baseUrl}/images/yelp-footer.png`}
             />
           </Section>
 

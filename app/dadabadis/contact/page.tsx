@@ -1,4 +1,4 @@
-import { lusitana } from '@/app/ui/fonts';
+import { mukta } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
 import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { FormEvent, Suspense, useState } from 'react';
@@ -61,22 +61,24 @@ export default async function Page() {
   // https://www.youtube.com/watch?v=PI-tGsvDoIU
 
 
-  return (<div className="w-full">
+  return (
+  
+  <div className={`${mukta.className} w-full text-keshar-saffronRedDark`}>
 
-    <p>Contact Page</p>
+    <p className='text-xl'>Contact Page</p>
 
-    <div className="container my-8 mx-auto md:px-6">
+    <div className="container my-8 mx-auto md:px-0">
 
-      <section className="mb-32">
+      <section className="mb-8">
         <div className="flex justify-center">
           <div className="text-center md:max-w-xl lg:max-w-3xl">
-            <h2 className="mb-6 px-6 text-3xl font-bold">Contact us</h2>
+            <h2 className="mb-6 text-4xl font-medium">Contact us</h2>
           </div>
         </div>
         <div className="flex flex-wrap">
-          <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-            <section className="bg-white dark:bg-gray-900">
-              <div className="py-8 lg:py-0 px-4 mx-auto max-w-screen-md">
+          <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-0">
+            <section className="bg-amber-50 dark:bg-gray-900">
+              <div className="py-0 lg:py-0 px-4 md:px-6 mx-auto max-w-screen-md">
                   <ContactForm />
 
                 {/* <form className="space-y-8" onSubmit={handleSubmit} > */}
@@ -137,13 +139,10 @@ export default async function Page() {
                   </div>
                   <div className="ml-6 grow">
                     <p className="mb-2 font-bold dark:text-white">
-                      Technical support
-                    </p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      support@dadaguru.in
-                    </p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      +91 83104 58540
+                      Contact
+                    </p>                    
+                    <p className="text-keshar-saffronRedLight dark:text-neutral-200">
+                      +91 96114 94701
                     </p>
                   </div>
                 </div>
@@ -152,22 +151,19 @@ export default async function Page() {
                 <div className="flex items-start">
                   <div className="shrink-0">
                     <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
+                      
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
                       </svg>
-
                     </div>
                   </div>
                   <div className="ml-6 grow">
                     <p className="mb-2 font-bold dark:text-white">
-                      Qustions ?
+                      E-mail
                     </p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      questions@dadaguru.in
-                    </p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      +91 96114 94701
-                    </p>
+                    <p className="text-keshar-saffronRedLight dark:text-neutral-200">
+                      contact@dadaguru.in
+                    </p>                   
                   </div>
                 </div>
               </div>
@@ -185,34 +181,26 @@ export default async function Page() {
                   </div>
                   <div className="ml-6 grow">
                     <p className="mb-2 font-bold dark:text-white">Donations</p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
+                    <p className="text-keshar-saffronRedLight dark:text-neutral-200">
                       donation@dadaguru.in
-                    </p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      +91 96114 97799
-                    </p>
+                    </p>                    
                   </div>
                 </div>
               </div>
               <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:px-6">
                 <div className="align-start flex">
                   <div className="shrink-0">
-                    <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                        stroke="currentColor" className="h-6 w-6">
-                        <path strokeLinecap="round" strokeLinejoin="round"
-                          d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                    <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">                      
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
                       </svg>
                     </div>
                   </div>
                   <div className="ml-6 grow">
-                    <p className="mb-2 font-bold dark:text-white">Informations</p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      info@dadaguru.in
-                    </p>
-                    <p className="text-neutral-500 dark:text-neutral-200">
-                      +91 96114 97799
-                    </p>
+                    <p className="mb-2 font-bold dark:text-white">Website</p>
+                    <p className="text-keshar-saffronRedLight dark:text-neutral-200">
+                      www.dadaguru.in
+                    </p>                    
                   </div>
                 </div>
               </div>

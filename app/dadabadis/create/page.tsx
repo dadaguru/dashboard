@@ -1,4 +1,4 @@
-import { lusitana } from '@/app/ui/fonts';
+import { mukta } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
 import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { Suspense } from 'react';
@@ -18,7 +18,7 @@ export default async function Page() {
   const indiastates = await fetchIndiaStates();
 
   return <div className="w-full">    
-    <p>Submit Dadabadi Page</p>
+    <p className='text-xl text-keshar-saffronRedDark'>Submit Dadabadi Page</p>
     
       <Breadcrumbs
         breadcrumbs={[

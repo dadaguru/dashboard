@@ -1,4 +1,4 @@
-import { lusitana } from '@/app/ui/fonts';
+import { mukta } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
 import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { Suspense } from 'react';

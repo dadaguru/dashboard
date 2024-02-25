@@ -92,9 +92,7 @@ export async function createDadabadi(prevState: State, formData: FormData) {
     bhojanshala,
     dharmshala,
     contactnumber,
-    maplink,
-    image1,
-    image2,
+    maplink,    
     state,
     city,
     description,
@@ -106,7 +104,7 @@ export async function createDadabadi(prevState: State, formData: FormData) {
   //const amountInCents = amount * 100;
   const date = new Date().toISOString().split('T')[0];
 
-  // Insert data into the database
+  // Insert data into the database, as this data is coming from excel so upload default placeholder image for dadabadi
   try {
     await sql`
       INSERT INTO dadabadis (        
@@ -147,8 +145,8 @@ export async function createDadabadi(prevState: State, formData: FormData) {
         ${dharmshala},
         ${contactnumber},
         ${maplink},
-        ${image1},
-        ${image2},
+        '/images/dadabadi_placeholder.png',
+        '/images/dadabadi_placeholder.png',
         ${state},
         ${city},
         ${description},

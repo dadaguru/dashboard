@@ -1,6 +1,6 @@
 'use client';
 import { createDadabadi } from '@/app/lib/dadabadiactions';
-
+import { mukta } from '@/app/ui/fonts';
 import { FormEvent, useRef, useState } from 'react';
 
 import { useFormState, useFormStatus } from 'react-dom';
@@ -11,21 +11,43 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as z from "zod";
 import { Button } from '@/app/ui/button';
 
+import {
+  CheckIcon,
+  ClockIcon,
+  MapPinIcon,
+  XMarkIcon,
+  UserCircleIcon,
+  EnvelopeIcon,
+  UserIcon,
+  LinkIcon,
+  PhoneArrowDownLeftIcon,
+  GlobeAsiaAustraliaIcon,
+  AtSymbolIcon,
+  CursorArrowRaysIcon,
+  BookmarkSquareIcon,
+  NewspaperIcon,
+  HandRaisedIcon,
+  PhotoIcon,
+  PencilIcon,
+  ArrowPathIcon,
+  ArrowDownIcon
+} from '@heroicons/react/24/outline';
+
 const ContactFormSchema = z.object({
   name: z.string({ required_error: "Your name is required", invalid_type_error: 'Please provide a title.' }).min(2).max(50),
   senderNumber: z.string({ required_error: "Your contact number is required" }).min(10), //z.string({ invalid_type_error: 'Please provide a title.' }),
   senderEmail: z.string({ required_error: "Your Email is required", invalid_type_error: 'Please provide a title.' }).email(),
-  message: z.string({required_error: "message is required", invalid_type_error: 'Please provide a title.' }).min(2),
+  message: z.string({ required_error: "message is required", invalid_type_error: 'Please provide a title.' }).min(2),
 });
 
 
 
-export default function ContactForm() { 
+export default function ContactForm() {
   const ref = useRef<HTMLFormElement>(null);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const { pending, data, method, action } = useFormStatus();
-  
-  const sendEmail = async (e: FormEvent) => {    
+
+  const sendEmail = async (e: FormEvent) => {
     e.preventDefault();
     console.log("in sendEail");
     const formData = new FormData(e.target as HTMLFormElement);
@@ -47,7 +69,7 @@ export default function ContactForm() {
             ...newErrors,
             [issue.path[0]]: issue.message,
           };
-        }        
+        }
         console.log("new error :", newErrors);
         return setFormErrors(newErrors);
       } else {
@@ -56,7 +78,7 @@ export default function ContactForm() {
           name,
           senderNumber,
           senderEmail,
-          message,          
+          message,
         } = validatedFields.data;
         try {
           // Proceed with form submission      
@@ -83,13 +105,13 @@ export default function ContactForm() {
           } else {
             toast("Internal server error");
           }
-        } catch (error:any) {
+        } catch (error: any) {
           // Handle validation errors
           toast(error);
           console.log("error in try catch ", error);
         }
       }
-    } catch (error:any) {
+    } catch (error: any) {
       toast(error);
       console.log("try catch error :", error);
     }
@@ -99,65 +121,123 @@ export default function ContactForm() {
     <>
       <ToastContainer />
       <form ref={ref} className="space-y-8" onSubmit={sendEmail} >
-        <div>
-          <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Your Name
-          </label>
-          <input type="text" id="name" name="name"
-            className="peer block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-            placeholder="Enter your Name" />
-          <div id="name-error" aria-live="polite" aria-atomic="true">
-            {formErrors.name &&
-              <p className="mt-2 text-xs text-red-500">
-                {formErrors.name}
-              </p>
-            }
+
+        <div className="rounded-md bg-amber-50 text-keshar-saffronRedLight p-0 md:p-0">
+
+          {/* Sender Name */}
+          <div className="mb-4">
+            <label htmlFor="name" className="mb-2 block text-md font-small">
+              Enter your Name
+            </label>
+            <div className="relative mt-2 rounded-md">
+              <div className="relative">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your Name"
+                  aria-describedby="name-error"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
+                />
+                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
+              </div>
+              <div id="name-error" aria-live="polite" aria-atomic="true">
+                {formErrors.name &&
+                  <p className="mt-2 text-xs font-bold text-blue-500">
+                    {formErrors.name}
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          {/* Sender Email */}
+          <div className="mb-4">
+            <label htmlFor="senderemail" className="mb-2 block text-md font-small">
+              Enter your valid Email
+            </label>
+            <div className="relative mt-2 rounded-md">
+              <div className="relative">
+                <input
+                  id="senderEmail"
+                  name="senderEmail"
+                  type="email"
+                  maxLength={500}
+                  placeholder="Enter your valid Email"
+                  aria-describedby="senderEmail-error"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
+                />
+                <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
+              </div>
+              <div id="senderEmail-error" aria-live="polite" aria-atomic="true">
+                {formErrors.senderEmail &&
+                  <p className="mt-2 text-xs font-bold text-blue-500">
+                    {formErrors.senderEmail}
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          {/* Sender Number */}
+          <div className="mb-4">
+            <label htmlFor="senderNumber" className="mb-2 block text-md font-small">
+              Enter your valid mobile number
+            </label>
+            <div className="relative mt-2 rounded-md">
+              <div className="relative">
+                <input
+                  id="senderNumber"
+                  name="senderNumber"
+                  type="text"
+                  maxLength={30}
+                  placeholder="Enter your valid 10 digit mobile number"
+                  aria-describedby="senderNumber-error"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
+                />
+                <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
+              </div>
+              <div id="senderNumber-error" aria-live="polite" aria-atomic="true">
+                {formErrors.senderNumber &&
+                  <p className="mt-2 text-xs font-bold text-blue-500">
+                    {formErrors.senderNumber}
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          {/* description */}
+          <div className="mb-8">
+            <label htmlFor="message" className="mb-2 block text-md font-small">
+              Enter your message
+            </label>
+            <div className="relative mt-2 rounded-md">
+              <div className="relative">
+                <textarea
+                  id="message"
+                  name="message"
+                  maxLength={3000}
+                  placeholder="Enter your message or Leave a comment..."
+                  aria-describedby="message-error"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-500 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
+                />
+                <PencilIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
+              </div>
+              <div id="message-error" aria-live="polite" aria-atomic="true">
+                {formErrors.message &&
+                  <p className="mt-2 text-xs font-bold text-blue-500">
+                    {formErrors.message}
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <Button type='submit' className="py-3 px-5 text-md font-medium text-center text-keshar-saffronRedDark rounded-lg bg-amber-500 sm:w-fit hover:bg-keshar-saffronRedLight focus:ring-4 focus:outline-none focus:ring-amber-300">
+              Send message</Button>
           </div>
         </div>
-        <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Enter your email
-          </label>
-          <input type="email" id="senderEmail" name="senderEmail" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-            placeholder="name@dadaguru.in"  maxLength={500} />
-            <div id="name-error" aria-live="polite" aria-atomic="true">
-            {formErrors.senderEmail &&
-              <p className="mt-2 text-xs text-red-500">
-                {formErrors.senderEmail}
-              </p>
-            }
-          </div>
-        </div>
-        <div>
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Enter your Mobile Number
-          </label>
-          <input type="text" id="senderNumber" name="senderNumber" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-            placeholder="1234567890"  maxLength={30} />
-            <div id="name-error" aria-live="polite" aria-atomic="true">
-            {formErrors.senderNumber &&
-              <p className="mt-2 text-xs text-red-500">
-                {formErrors.senderNumber}
-              </p>
-            }
-          </div>
-        </div>
-        <div className="sm:col-span-2">
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-            Enter your message
-          </label>
-          <textarea id="message" name="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-            placeholder="Enter your message or Leave a comment..." maxLength={3000}></textarea>
-            <div id="name-error" aria-live="polite" aria-atomic="true">
-            {formErrors.message &&
-              <p className="mt-2 text-xs text-red-500">
-                {formErrors.message}
-              </p>
-            }
-          </div>
-        </div>
-        <Button type='submit' className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-          Send message</Button>
       </form>
     </>
   );

@@ -301,11 +301,11 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
       <form ref={ref} encType="multipart/form-data" onSubmit={sendCreateDadabadiEmail} >
         <ToastContainer />
-        <div className="rounded-md bg-gray-50 p-4 md:p-6">
+        <div className="rounded-md bg-amber-50 text-keshar-saffronRedLight p-4 md:p-6">
 
           {/* Sender Name */}
           <div className="mb-4">
-            <label htmlFor="sendername" className="mb-2 block text-sm font-medium">
+            <label htmlFor="sendername" className="mb-2 block text-sm font-small">
               Enter your Full Name
             </label>
             <div className="relative mt-2 rounded-md">
@@ -316,13 +316,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter your Full Name"
                   aria-describedby="sendername-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="sendername-error" aria-live="polite" aria-atomic="true">
                 {formErrors.sendername &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.sendername}
                   </p>
                 }
@@ -332,7 +332,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Sender Email */}
           <div className="mb-4">
-            <label htmlFor="senderemail" className="mb-2 block text-sm font-medium">
+            <label htmlFor="senderemail" className="mb-2 block text-sm font-small">
               Enter your valid Email
             </label>
             <div className="relative mt-2 rounded-md">
@@ -343,13 +343,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter your valid Email"
                   aria-describedby="senderemail-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="senderemail-error" aria-live="polite" aria-atomic="true">
                 {formErrors.senderemail &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.senderemail}
                   </p>
                 }
@@ -359,7 +359,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Sender Number */}
           <div className="mb-4">
-            <label htmlFor="sendernumber" className="mb-2 block text-sm font-medium">
+            <label htmlFor="sendernumber" className="mb-2 block text-sm font-small">
               Enter your valid mobile number
             </label>
             <div className="relative mt-2 rounded-md">
@@ -370,13 +370,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter your valid mobile number"
                   aria-describedby="sendernumber-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="sendernumber-error" aria-live="polite" aria-atomic="true">
                 {formErrors.sendernumber &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.sendernumber}
                   </p>
                 }
@@ -386,7 +386,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* City or Title */}
           <div className="mb-4">
-            <label htmlFor="title" className="mb-2 block text-sm font-medium">
+            <label htmlFor="title" className="mb-2 block text-sm font-small">
               Enter City Name
             </label>
             <div className="relative mt-2 rounded-md">
@@ -397,13 +397,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter City Name"
                   aria-describedby="title-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="title-error" aria-live="polite" aria-atomic="true">
                 {formErrors.title &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.title}
                   </p>
                 }
@@ -413,7 +413,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* City or Title in Hindi */}
           <div className="mb-4">
-            <label htmlFor="titlehin" className="mb-2 block text-sm font-medium">
+            <label htmlFor="titlehin" className="mb-2 block text-sm font-small">
               Enter City Name in Hindi
             </label>
             <div className="relative mt-2 rounded-md">
@@ -424,13 +424,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter City Name in Hindi"
                   aria-describedby="titlehin-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="titlehin-error" aria-live="polite" aria-atomic="true">
                 {formErrors.titlehin &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.titlehin}
                   </p>
                 }
@@ -440,7 +440,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Contact Name*/}
           <div className="mb-4">
-            <label htmlFor="contactname" className="mb-2 block text-sm font-medium">
+            <label htmlFor="contactname" className="mb-2 block text-sm font-small">
               Enter name of contact person
             </label>
             <div className="relative mt-2 rounded-md">
@@ -451,13 +451,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Contact Name"
                   aria-describedby="contactname-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="contactname-error" aria-live="polite" aria-atomic="true">
                 {formErrors.contactname &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.contactname}
                   </p>
                 }
@@ -467,7 +467,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Contact Number*/}
           <div className="mb-4">
-            <label htmlFor="contactnumber" className="mb-2 block text-sm font-medium">
+            <label htmlFor="contactnumber" className="mb-2 block text-sm font-small">
               Enter contact number
             </label>
             <div className="relative mt-2 rounded-md">
@@ -478,13 +478,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Contact Number"
                   aria-describedby="contactnumber-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="contactnumber-error" aria-live="polite" aria-atomic="true">
                 {formErrors.contactnumber &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.contactnumber}
                   </p>
                 }
@@ -494,7 +494,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Address */}
           <div className="mb-4">
-            <label htmlFor="address" className="mb-2 block text-sm font-medium">
+            <label htmlFor="address" className="mb-2 block text-sm font-small">
               Enter Address
             </label>
             <div className="relative mt-2 rounded-md">
@@ -505,13 +505,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Address"
                   aria-describedby="address-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="address-error" aria-live="polite" aria-atomic="true">
                 {formErrors.address &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.address}
                   </p>
                 }
@@ -521,7 +521,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* City or City Area */}
           <div className="mb-4">
-            <label htmlFor="city" className="mb-2 block text-sm font-medium">
+            <label htmlFor="city" className="mb-2 block text-sm font-small">
               Enter which area of the city
             </label>
             <div className="relative mt-2 rounded-md">
@@ -532,13 +532,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter landmark"
                   aria-describedby="city-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="city-error" aria-live="polite" aria-atomic="true">
                 {formErrors.city &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.city}
                   </p>
                 }
@@ -548,7 +548,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Pin */}
           <div className="mb-4">
-            <label htmlFor="pin" className="mb-2 block text-sm font-medium">
+            <label htmlFor="pin" className="mb-2 block text-sm font-small">
               Enter Postal pin
             </label>
             <div className="relative mt-2 rounded-md">
@@ -559,13 +559,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Postal Pin"
                   aria-describedby="pin-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="pin-error" aria-live="polite" aria-atomic="true">
                 {formErrors.pin &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.pin}
                   </p>
                 }
@@ -575,10 +575,10 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Bhojanshala */}
           <fieldset>
-            <legend className="mb-2 block text-sm font-medium">
+            <legend className="mb-2 block text-sm font-small">
               Food facility available ?
             </legend>
-            <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
+            <div className="rounded-md border border-amber-200 bg-white px-[14px] py-3">
               <div className="flex gap-4">
                 <div className="flex items-center">
                   <input
@@ -587,7 +587,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                     type="radio"
                     value="available"
                     aria-describedby="bhojanshala-error"
-                    className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                    className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                   />
                   <label
                     htmlFor="yesfood"
@@ -603,11 +603,11 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                     type="radio"
                     value="notavailable"
                     aria-describedby="bhojanshala-error"
-                    className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                    className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                   />
                   <label
                     htmlFor="nofood"
-                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
+                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-keshar-saffronRedDark px-3 py-1.5 text-xs font-medium text-white"
                   >
                     No, Not Available<XMarkIcon className="h-4 w-4" />
                   </label>
@@ -616,7 +616,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
             </div>
             <div id="bhojanshala-error" aria-live="polite" aria-atomic="true">
               {formErrors.bhojanshala &&
-                <p className="mt-2 text-sm text-red-500">
+                <p className="mt-2 text-xs font-bold text-blue-500">
                   {formErrors.bhojanshala}
                 </p>
               }
@@ -625,10 +625,10 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Dharmshala */}
           <fieldset>
-            <legend className="mb-2 mt-2 block text-sm font-medium">
+            <legend className="mb-2 mt-2 block text-sm font-small">
               Stay facility available ?
             </legend>
-            <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
+            <div className="rounded-md border border-amber-200 bg-white px-[14px] py-3">
               <div className="flex gap-4">
                 <div className="flex items-center">
                   <input
@@ -637,7 +637,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                     type="radio"
                     value="available"
                     aria-describedby="dharmshala-error"
-                    className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                    className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                   />
                   <label
                     htmlFor="yesstay"
@@ -653,11 +653,11 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                     type="radio"
                     value="notavailable"
                     aria-describedby="dharmshala-error"
-                    className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                    className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                   />
                   <label
                     htmlFor="nostay"
-                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
+                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-keshar-saffronRedDark px-3 py-1.5 text-xs font-medium text-white"
                   >
                     No, Not Available <XMarkIcon className="h-4 w-4" />
                   </label>
@@ -666,7 +666,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
             </div>
             <div id="dharmshala-error" aria-live="polite" aria-atomic="true">
               {formErrors.dharmshala &&
-                <p className="mt-2 text-sm text-red-500">
+                <p className="mt-2 text-xs font-bold text-blue-500">
                   {formErrors.dharmshala}
                 </p>
               }
@@ -675,31 +675,31 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* India States */}
           <div className="mb-4">
-            <label htmlFor="state" className="mb-2 block text-sm font-medium">
+            <label htmlFor="state" className="mb-2 block text-sm font-small">
               Choose state
             </label>
             <div className="relative">
               <select
                 id="state"
                 name="state"
-                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full cursor-pointer rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 defaultValue=""
                 aria-describedby="state-error"
               >
-                <option value="" disabled>
+                <option value="" className='text-md font-sans' disabled>
                   Select a state
                 </option>
                 {indiastates.map((state) => (
-                  <option key={state.id} value={state.state}>
+                  <option key={state.id} value={state.state} className='text-md font-sans'>
                     {state.name}
                   </option>
                 ))}
               </select>
-              <GlobeAsiaAustraliaIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <GlobeAsiaAustraliaIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500" />
             </div>
             <div id="state-error" aria-live="polite" aria-atomic="true">
               {formErrors.state &&
-                <p className="mt-2 text-sm text-red-500">
+                <p className="mt-2 text-xs font-bold text-blue-500">
                   {formErrors.state}
                 </p>
               }
@@ -708,7 +708,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Email */}
           <div className="mb-4">
-            <label htmlFor="email" className="mb-2 block text-sm font-medium">
+            <label htmlFor="email" className="mb-2 block text-sm font-small">
               Enter E-mail
             </label>
             <div className="relative mt-2 rounded-md">
@@ -719,13 +719,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Email"
                   aria-describedby="email-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="email-error" aria-live="polite" aria-atomic="true">
                 {formErrors.email &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.email}
                   </p>
                 }
@@ -735,7 +735,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* websiteurl */}
           <div className="mb-4">
-            <label htmlFor="websiteurl" className="mb-2 block text-sm font-medium">
+            <label htmlFor="websiteurl" className="mb-2 block text-sm font-small">
               Enter Website URL
             </label>
             <div className="relative mt-2 rounded-md">
@@ -746,13 +746,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Website URL"
                   aria-describedby="websiteurl-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <CursorArrowRaysIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <CursorArrowRaysIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="websiteurl-error" aria-live="polite" aria-atomic="true">
                 {formErrors.websiteurl &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.websiteurl}
                   </p>
                 }
@@ -762,7 +762,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* socialmediaurl */}
           <div className="mb-4">
-            <label htmlFor="socialmediaurl" className="mb-2 block text-sm font-medium">
+            <label htmlFor="socialmediaurl" className="mb-2 block text-sm font-small">
               Enter Social Media URL Link
             </label>
             <div className="relative mt-2 rounded-md">
@@ -773,13 +773,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Social Media URL Link"
                   aria-describedby="socialmediaurl-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <LinkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <LinkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="socialmediaurl-error" aria-live="polite" aria-atomic="true">
                 {formErrors.socialmediaurl &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.socialmediaurl}
                   </p>
                 }
@@ -789,7 +789,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* maplink */}
           <div className="mb-4">
-            <label htmlFor="maplink" className="mb-2 block text-sm font-medium">
+            <label htmlFor="maplink" className="mb-2 block text-sm font-small">
               Enter Google map Link
             </label>
             <div className="relative mt-2 rounded-md">
@@ -800,13 +800,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Google map Link"
                   aria-describedby="maplink-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="maplink-error" aria-live="polite" aria-atomic="true">
                 {formErrors.maplink &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.maplink}
                   </p>
                 }
@@ -816,7 +816,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* trustname */}
           <div className="mb-4">
-            <label htmlFor="trustname" className="mb-2 block text-sm font-medium">
+            <label htmlFor="trustname" className="mb-2 block text-sm font-small">
               Enter Trust Name
             </label>
             <div className="relative mt-2 rounded-md">
@@ -827,13 +827,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Trust Name"
                   aria-describedby="trustname-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <BookmarkSquareIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <BookmarkSquareIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="trustname-error" aria-live="polite" aria-atomic="true">
                 {formErrors.trustname &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.trustname}
                   </p>
                 }
@@ -843,7 +843,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Event */}
           <div className="mb-4">
-            <label htmlFor="eventid" className="mb-2 block text-sm font-medium">
+            <label htmlFor="eventid" className="mb-2 block text-sm font-small">
               Enter Event Detail
             </label>
             <div className="relative mt-2 rounded-md">
@@ -854,13 +854,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder=" Enter Event Detail"
                   aria-describedby="eventid-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <NewspaperIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <NewspaperIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="eventid-error" aria-live="polite" aria-atomic="true">
                 {formErrors.eventid &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.eventid}
                   </p>
                 }
@@ -870,7 +870,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* moolnayakname */}
           <div className="mb-4">
-            <label htmlFor="moolnayakname" className="mb-2 block text-sm font-medium">
+            <label htmlFor="moolnayakname" className="mb-2 block text-sm font-small">
               Enter MoolNayak Name
             </label>
             <div className="relative mt-2 rounded-md">
@@ -881,13 +881,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter MoolNayak Name"
                   aria-describedby="moolnayakname-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="moolnayakname-error" aria-live="polite" aria-atomic="true">
                 {formErrors.moolnayakname &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.moolnayakname}
                   </p>
                 }
@@ -897,7 +897,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* dadaguruname */}
           <div className="mb-4">
-            <label htmlFor="dadaguruname" className="mb-2 block text-sm font-medium">
+            <label htmlFor="dadaguruname" className="mb-2 block text-sm font-small">
               Enter Dadaguru Name
             </label>
             <div className="relative mt-2 rounded-md">
@@ -908,13 +908,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   type="text"
                   placeholder="Enter Dadaguru Name"
                   aria-describedby="dadaguruname-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="dadaguruname-error" aria-live="polite" aria-atomic="true">
                 {formErrors.dadaguruname &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.dadaguruname}
                   </p>
                 }
@@ -924,11 +924,11 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Image 1 */}
           <div className="mb-4">
-            <label htmlFor="image1" className="mb-2 block text-sm font-medium">
+            <label htmlFor="image1" className="mb-2 block text-sm font-small">
               Attach First Image
             </label>
             <div className="relative mt-2 rounded-md">
-              <div className="relative bg-indigo-100 p-2 rounded-md">
+              <div className="relative bg-orange-200 p-2 rounded-md">
                 <input
                   id="image1"
                   name="image1"
@@ -938,12 +938,12 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   placeholder="Upload First Image"
                   onChange={onAddFileAction}
                   aria-describedby="image1-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-500 py-4 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
               </div>
               <div id="image1-error" aria-live="polite" aria-atomic="true">
                 {formErrors.image1 &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.image1}
                   </p>
                 }
@@ -953,26 +953,26 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* Image 2 */}
           <div className="mb-4">
-            <label htmlFor="image2" className="mb-2 block text-sm font-medium">
+            <label htmlFor="image2" className="mb-2 block text-sm font-small">
               Attach Second Image
             </label>
             <div className="relative mt-2 rounded-md">
-              <div className="relative bg-indigo-100 p-2 rounded-md">
+              <div className="relative bg-orange-200 p-2 rounded-md">
                 <input
                   id="image2"
                   name="image2"
                   type="file"
                   accept="image/*"
                   defaultValue={image2}
-                  placeholder="Upload First Image"
+                  placeholder="Upload Second Image"
                   onChange={onAddFileAction}
                   aria-describedby="image2-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-500 py-4 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
               </div>
               <div id="image2-error" aria-live="polite" aria-atomic="true">
                 {formErrors.image2 &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.image2}
                   </p>
                 }
@@ -982,7 +982,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
 
           {/* description */}
           <div className="mb-4">
-            <label htmlFor="description" className="mb-2 block text-sm font-medium">
+            <label htmlFor="description" className="mb-2 block text-sm font-small">
               Description / Comments
             </label>
             <div className="relative mt-2 rounded-md">
@@ -992,13 +992,13 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   name="description"
                   placeholder="Description / Comments"
                   aria-describedby="description-error"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-500 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
                 />
-                <PencilIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <PencilIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
               </div>
               <div id="description-error" aria-live="polite" aria-atomic="true">
                 {formErrors.description &&
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2 text-xs font-bold text-blue-500">
                     {formErrors.description}
                   </p>
                 }
@@ -1009,7 +1009,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
         <div>
           {formErrors.message &&
             (
-              <div id="toast-success" className="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+              <div id="toast-success" className="flex items-center w-full max-w-xs p-4 mb-4 text-amber-500 bg-white rounded-lg shadow dark:text-amber-400 dark:bg-amber-800" role="alert">
                 <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
                   <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
@@ -1017,7 +1017,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
                   <span className="sr-only">Check icon</span>
                 </div>
                 <div className="ms-3 text-sm font-normal">{formErrors?.message}</div>
-                <button type="button" className="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+                <button type="button" className="ms-auto -mx-1.5 -my-1.5 bg-white text-amber-400 hover:text-amber-900 rounded-lg focus:ring-2 focus:ring-amber-300 p-1.5 hover:bg-amber-100 inline-flex items-center justify-center h-8 w-8 dark:text-amber-500 dark:hover:text-white" data-dismiss-target="#toast-success" aria-label="Close">
                   <span className="sr-only">Close</span>
                   <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
@@ -1030,7 +1030,7 @@ export default function CreateDadabadiSendEmailForm({ indiastates }: { indiastat
         <div className="mt-6 flex justify-end gap-4">
           <Link
             href="/dashboard/dadabadis"
-            className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+            className="flex h-10 items-center rounded-lg bg-amber-500 px-4 text-sm font-medium text-keshar-saffronRedDark transition-colors hover:bg-keshar-saffronRedDark hover:text-white"
           >
             Cancel
           </Link>

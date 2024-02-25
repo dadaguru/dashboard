@@ -1,34 +1,33 @@
 import DadabadiLogo from '@/app/ui/dadabadi-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
+import { eczar } from '@/app/ui/fonts';
 import Image from 'next/image';
 
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-24 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-32">
+      <div className="flex h-24 shrink-0 items-end rounded-lg bg-gradient-to-r from-keshar-saffronRedDark to-keshar-saffronRedLight p-4 md:h-32">
         <DadabadiLogo />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-amber-500 px-6 py-10 md:w-2/5 md:px-20">
           
-          <p className={`${lusitana} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Dadabadi Directory.</strong> This is an extension of {' '}
-            <a href="https://www.dadaguru.in" className="text-blue-500">
+          <p className={`${eczar} text-xl text-keshar-saffronRedDark md:text-3xl md:leading-normal`}>
+            <strong>Welcome to Dadabadi Directory.</strong> Brought to you by {' '}
+            <a href="https://www.dadaguru.in" className="text-keshar-rose">
               www.dadaguru.in
-            </a>
-            , brought to you by www.dadaguru.in
+            </a>            
           </p>
           <Link
             href="/dadabadis"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg bg-keshar-saffronRedDark px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-keshar-saffronRedLight md:text-base"
           >
             <span>Go to Dadabadi Directory</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
           <Link
             href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg bg-keshar-saffronRedDark px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-keshar-saffronRedLight md:text-base"
           >
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
