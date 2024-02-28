@@ -25,9 +25,58 @@ interface ContactEmailTemplateProps {
 }
 
 const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+  ? `${process.env.VERCEL_URL}`
   : "";
 
+  const main = {
+    backgroundColor: "#fff",
+    fontFamily:
+      '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+  };
+  
+  const paragraph = {
+    fontSize: 16,
+  };
+  
+  const logo = {
+    padding: "30px 20px",
+  };
+  
+  const containerButton = {
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+  };
+  
+  const button = {
+    backgroundColor: "#e00707",
+    borderRadius: 3,
+    color: "#FFF",
+    fontWeight: "bold",
+    border: "1px solid rgb(0,0,0, 0.1)",
+    cursor: "pointer",
+    padding: "12px 30px",
+  };
+  
+  const content = {
+    border: "1px solid rgb(0,0,0, 0.1)",
+    borderRadius: "3px",
+    overflow: "hidden",
+  };
+  
+  const image = {
+    maxWidth: "100%",
+  };
+  
+  const boxInfos = {
+    padding: "20px",
+  };
+  
+  const containerImageFooter = {
+    padding: "45px 0 0 0",
+  };
+
+  
 export const ContactEmailTemplate = ({  
   name,
   senderEmail,
@@ -42,7 +91,7 @@ export const ContactEmailTemplate = ({
       <Body style={main}>
         <Container>
           <Section style={logo}>
-            <Img src={`${baseUrl}/images/yelp-logo.png`} />
+            <Img src={`${baseUrl}/images/yelp-logo.png`} alt="logo" width="300" height="300" />
           </Section>
 
           <Section style={content}>
@@ -126,54 +175,6 @@ ContactEmailTemplate.PreviewProps = {
 } as ContactEmailTemplateProps;
 
 export default ContactEmailTemplate;
-
-const main = {
-  backgroundColor: "#fff",
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-};
-
-const paragraph = {
-  fontSize: 16,
-};
-
-const logo = {
-  padding: "30px 20px",
-};
-
-const containerButton = {
-  display: "flex",
-  justifyContent: "center",
-  width: "100%",
-};
-
-const button = {
-  backgroundColor: "#e00707",
-  borderRadius: 3,
-  color: "#FFF",
-  fontWeight: "bold",
-  border: "1px solid rgb(0,0,0, 0.1)",
-  cursor: "pointer",
-  padding: "12px 30px",
-};
-
-const content = {
-  border: "1px solid rgb(0,0,0, 0.1)",
-  borderRadius: "3px",
-  overflow: "hidden",
-};
-
-const image = {
-  maxWidth: "100%",
-};
-
-const boxInfos = {
-  padding: "20px",
-};
-
-const containerImageFooter = {
-  padding: "45px 0 0 0",
-};
 
 
 /* import * as React from 'react';

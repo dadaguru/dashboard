@@ -19,7 +19,7 @@ export async function POST(request:NextRequest) {
       message
      } = body;
     const { data, error } = await resend.emails.send({
-      from: 'Dadabadi <info@therichdesigns.com>',
+      from: 'Dadabadi <info@dadabadi.dadaguru.in>',
       to: senderEmail as string,
       //cc: ["dadaguruweb@gmail.com"],
       //bcc: "yatindrajain@gmail.com",

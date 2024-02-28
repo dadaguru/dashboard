@@ -116,7 +116,7 @@ export async function createDadabadiEmail(prevState: State, formData: FormData) 
   try {
     // send mail here
     const { data, error } = await resend.emails.send({
-      from: 'Dadabadi <info@therichdesigns.com>',
+      from: 'Dadabadi <info@dadabadi.dadaguru.in>',
       to: "dijaingroup@gmail.com" as string,
       //cc: ["dadaguruweb@gmail.com"],
       //bcc: "yatindrajain@gmail.com",

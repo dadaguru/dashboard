@@ -59,7 +59,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
 
   return (
     <form action={dispatch}>
-      <div className="rounded-md bg-gray-50 p-4 md:p-6">
+      <div className="rounded-md bg-amber-50 text-keshar-saffronRedLight p-4 md:p-6">
        
         {/* City or Title */}
         <div className="mb-4">
@@ -74,9 +74,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter City Name"
                 aria-describedby="title-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="title-error" aria-live="polite" aria-atomic="true">
               {state.errors?.title &&
@@ -102,9 +102,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter City Name in Hindi"
                 aria-describedby="titlehin-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="titlehin-error" aria-live="polite" aria-atomic="true">
               {state.errors?.titlehin &&
@@ -130,9 +130,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Contact Name"
                 aria-describedby="contactname-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="contactname-error" aria-live="polite" aria-atomic="true">
               {state.errors?.contactname &&
@@ -158,9 +158,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Contact Number"
                 aria-describedby="contactnumber-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <PhoneArrowDownLeftIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="contactnumber-error" aria-live="polite" aria-atomic="true">
               {state.errors?.contactnumber &&
@@ -186,9 +186,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Address"
                 aria-describedby="address-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="address-error" aria-live="polite" aria-atomic="true">
               {state.errors?.address &&
@@ -214,9 +214,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter landmark"
                 aria-describedby="city-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="city-error" aria-live="polite" aria-atomic="true">
               {state.errors?.city &&
@@ -242,9 +242,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Postal Pin"
                 aria-describedby="pin-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <EnvelopeIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="pin-error" aria-live="polite" aria-atomic="true">
               {state.errors?.pin &&
@@ -259,10 +259,10 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
 
         {/* Bhojanshala */}
         <fieldset>
-          <legend className="mb-2 block text-sm font-medium">
+          <legend className="mb-2 block text-sm font-small">
             Food facility available ?
           </legend>
-          <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
+          <div className="rounded-md border border-amber-200 bg-white px-[14px] py-3">
             <div className="flex gap-4">
               <div className="flex items-center">
               <input
@@ -271,7 +271,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                   type="radio"
                   value="available"
                   aria-describedby="bhojanshala-error"
-                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                 />
                 <label
                   htmlFor="yesfood"
@@ -287,11 +287,11 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                   type="radio"
                   value="notavailable"
                   aria-describedby="bhojanshala-error"
-                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                 />
                 <label
                   htmlFor="nofood"
-                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
+                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-keshar-saffronRedDark px-3 py-1.5 text-xs font-medium text-white"
                 >
                   No, Not Available<XMarkIcon className="h-4 w-4" />
                 </label>
@@ -313,7 +313,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
           <legend className="mb-2 mt-2 block text-sm font-medium">
             Stay facility available ?
           </legend>
-          <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
+          <div className="rounded-md border border-amber-200 bg-white px-[14px] py-3">
             <div className="flex gap-4">
               <div className="flex items-center">
               <input
@@ -322,7 +322,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                   type="radio"
                   value="available"
                   aria-describedby="dharmshala-error"
-                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                 />
                 <label
                   htmlFor="yesstay"
@@ -338,11 +338,11 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                   type="radio"
                   value="notavailable"
                   aria-describedby="dharmshala-error"
-                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  className="h-4 w-4 cursor-pointer border-amber-300 bg-amber-100 text-keshar-saffronRedDark focus:ring-2"
                 />
                 <label
                   htmlFor="nostay"
-                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
+                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-keshar-saffronRedDark px-3 py-1.5 text-xs font-medium text-white"
                 >
                   No, Not Available <XMarkIcon className="h-4 w-4" />
                 </label>
@@ -368,20 +368,20 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
             <select
               id="state"
               name="state"
-              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+              className="peer block w-full cursor-pointer rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               defaultValue=""
               aria-describedby="state-error"
             >
-              <option value="" disabled>
+              <option value="" className='text-md font-sans' disabled>
                 Select a state
               </option>
               {indiastates.map((state) => (
-                <option key={state.id} value={state.state}>
+                <option key={state.id} value={state.state} className='text-md font-sans'>
                   {state.name}
                 </option>
               ))}
             </select>
-            <GlobeAsiaAustraliaIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <GlobeAsiaAustraliaIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500" />
           </div>
           <div id="state-error" aria-live="polite" aria-atomic="true">
             {state.errors?.state &&
@@ -406,9 +406,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Email"
                 aria-describedby="email-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="email-error" aria-live="polite" aria-atomic="true">
               {state.errors?.email &&
@@ -434,9 +434,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Website URL"
                 aria-describedby="websiteurl-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <CursorArrowRaysIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <CursorArrowRaysIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="websiteurl-error" aria-live="polite" aria-atomic="true">
               {state.errors?.websiteurl &&
@@ -462,9 +462,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Social Media URL Link"
                 aria-describedby="socialmediaurl-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <LinkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <LinkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="socialmediaurl-error" aria-live="polite" aria-atomic="true">
               {state.errors?.socialmediaurl &&
@@ -490,9 +490,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Google map Link"
                 aria-describedby="maplink-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <MapPinIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="maplink-error" aria-live="polite" aria-atomic="true">
               {state.errors?.maplink &&
@@ -518,9 +518,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Trust Name"
                 aria-describedby="trustname-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <BookmarkSquareIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <BookmarkSquareIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="trustname-error" aria-live="polite" aria-atomic="true">
               {state.errors?.trustname &&
@@ -546,9 +546,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder=" Enter Event Detail"
                 aria-describedby="eventid-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <NewspaperIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <NewspaperIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="eventid-error" aria-live="polite" aria-atomic="true">
               {state.errors?.eventid &&
@@ -574,9 +574,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter MoolNayak Name"
                 aria-describedby="moolnayakname-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="moolnayakname-error" aria-live="polite" aria-atomic="true">
               {state.errors?.moolnayakname &&
@@ -602,9 +602,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 type="text"                
                 placeholder="Enter Dadaguru Name"
                 aria-describedby="dadaguruname-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <HandRaisedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="dadaguruname-error" aria-live="polite" aria-atomic="true">
               {state.errors?.dadaguruname &&
@@ -619,19 +619,19 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
 
         {/* Image 1 */}
         <div className="mb-4">
-          <label htmlFor="image1" className="mb-2 block text-sm font-medium">
+          <label htmlFor="image1" className="mb-2 block text-sm font-small">
             Upload First Image
           </label>
           <div className="relative mt-2 rounded-md">
-            <div className="relative bg-indigo-100 p-2 rounded-md">
+            <div className="relative bg-orange-200 p-2 rounded-md">
               {image1 ? (
                 <>
                   <div className="relative">
                     <Image className="object-fill h-auto w-full" src={image1} alt='my image' width={500} height={500}/>
-                    <Button type="button" className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                    <Button type="button" className="absolute top-0 m-2 text-keshar-saffronDarkRed bg-amber-500 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center"
                       onClick={() => handleDeleteImage(image1 , "image1")}>
-                        {image1IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
-                          <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
+                        {image1IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-keshar-saffronDarkRed" /></> : 
+                          <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-keshar-saffronDarkRed" />
                         }
                     </Button>
                   </div>
@@ -640,6 +640,13 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
               (<>
               <UploadButton
                 endpoint='imageUploader'
+                appearance={{
+                  button:
+                    "bg-orange-900 text-white hover:bg-amber-500 hover:text-orange-900 ut-ready:bg-green-500 ut-uploading:bg-green-500 ut-uploading:cursor-not-allowed after:bg-orange-400",
+                  container: "w-full p-3 flex-row rounded-md border-orange-100 bg-orange-100",
+                  allowedContent:
+                    "flex h-8 flex-col items-center justify-center px-4 text-orange-900",
+                }}
                 onClientUploadComplete={(res) => {
                   // Do something with the response
                   setImage1(res[0].url);
@@ -659,7 +666,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 defaultValue={image1}
                 placeholder="Upload First Image"
                 aria-describedby="image1-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-500 py-4 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />              
             </div>
             <div id="image1-error" aria-live="polite" aria-atomic="true">
@@ -679,15 +686,15 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
             Upload Second Image
           </label>
           <div className="relative mt-2 rounded-md">
-            <div className="relative bg-indigo-100 p-2 rounded-md">
+            <div className="relative bg-orange-200 p-2 rounded-md">
             {image2 ? (
                 <>
                   <div className="relative">
                     <Image className="object-fill h-auto w-full" src={image2} alt='my image' width={500} height={500}/>
-                    <Button type="button" className="absolute top-0 m-2 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
+                    <Button type="button" className="absolute top-0 m-2 text-keshar-saffronDarkRed bg-amber-500 hover:bg-blue-800 font-medium rounded-lg text-sm px-1 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700"
                       onClick={() => handleDeleteImage(image2, "image2")}>
-                        {image2IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-white" /></> : 
-                          <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-white" />
+                        {image2IsDeleting ? <><ArrowPathIcon className="pointer-events-none h-[24px] w-[24px] text-keshar-saffronDarkRed" /></> : 
+                          <XMarkIcon className="pointer-events-none h-[24px] w-[24px] text-keshar-saffronDarkRed" />
                         }
                     </Button>
                   </div>
@@ -696,6 +703,13 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
               (<>
               <UploadButton
                 endpoint='imageUploader'
+                appearance={{
+                  button:
+                    "bg-orange-900 text-white hover:bg-amber-500 hover:text-orange-900 uploading:bg-green-500 ut-uploading:cursor-not-allowed after:bg-orange-400",
+                  container: "w-full p-3 flex-row rounded-md border-orange-100 bg-orange-100",
+                  allowedContent:
+                    "flex h-8 flex-col items-center justify-center px-4 text-orange-900",
+                }}
                 onClientUploadComplete={(res) => {
                   // Do something with the response
                   setImage2(res[0].url);
@@ -715,7 +729,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 defaultValue={image2}
                 placeholder="Upload Second Image"
                 aria-describedby="image2-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-500 py-4 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />              
             </div>
             <div id="image2-error" aria-live="polite" aria-atomic="true">
@@ -741,9 +755,9 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
                 name="description"                
                 placeholder="Description / Comments"
                 aria-describedby="description-error"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border text-keshar-saffronRedDark border-amber-200 py-2 pl-10 text-sm outline-2 placeholder:text-amber-500 focus:border-amber-500 focus:ring-amber-500"
               />
-              <PencilIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <PencilIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-amber-500 peer-focus:text-keshar-saffronRedLight" />
             </div>
             <div id="description-error" aria-live="polite" aria-atomic="true">
               {state.errors?.description &&
@@ -760,7 +774,7 @@ export default function Form({ indiastates, whichPage}: { indiastates: IndiaStat
       <div className="mt-6 flex justify-end gap-4">
         <Link
           href="/dashboard/dadabadis"
-          className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+          className="flex h-10 items-center rounded-lg bg-amber-500 px-4 text-sm font-medium text-keshar-saffronRedDark transition-colors hover:bg-keshar-saffronRedDark hover:text-white"
         >
           Cancel
         </Link>
