@@ -11,7 +11,8 @@ import { Metadata } from 'next';
 import ExcelImport  from '@/app/ui/dadabadis/excel-import';
 
 export const metadata: Metadata = {
-  title: 'Invoices',
+  title: 'Upload Admin',
+  description: 'Dadabari'
 };
 
 export default async function Page({

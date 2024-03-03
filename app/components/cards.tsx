@@ -6,12 +6,13 @@ import {
 } from '@heroicons/react/24/outline';
 import { eczar } from '@/app/ui/fonts';
 import { fetchCardData } from '@/app/lib/data';
-import { fetchFilteredDadabadis } from '@/app/lib/dadabadidata';
+import { fetchFilteredDadabadisPublished } from '@/app/lib/dadabadidata';
 
 import { MapPinned, Utensils, BedDouble, ThumbsUp} from 'lucide-react';
 import { DadabadiTable } from '../lib/dadabadidefinitions';
 import Link from 'next/link';
 import {DetailDadabadi} from '@/app/components/buttons'
+import Image from 'next/image';
 
 const iconMap = {
   socialmediaurl: ThumbsUp,
@@ -33,7 +34,8 @@ export default async function CardWrapper({
     totalPaidInvoices,
     totalPendingInvoices,
   } = await fetchCardData();
-  const dadabadis = await fetchFilteredDadabadis(query, currentPage);
+  let dadabadis = await fetchFilteredDadabadisPublished(query, currentPage);  
+  
   return (
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}
@@ -42,10 +44,16 @@ export default async function CardWrapper({
       <Card title="Pending" value={totalPendingInvoices} type="pending" />
       <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
       <Card title="Total Customers" value={numberOfCustomers} type="customers"/> */}
-      {dadabadis?.map((dadabadi) => (
+       {dadabadis ?.map((dadabadi) => (
         <Card key={dadabadi.id} dadabadi={dadabadi} title={dadabadi.title} value={dadabadi.titlehin} type="bhojanshala" />
       ))}
-      
+
+      {/* {dadabadis?.map((dadabadi) => (
+
+        (dadabadi.published === 'published') ?
+          <><Card key={dadabadi.id} dadabadi={dadabadi} title={dadabadi.title} value={dadabadi.titlehin} type="bhojanshala" /></>
+          : null))} */}
+
     </>
   );
 }
@@ -87,7 +95,7 @@ export function Card({
         <div>
           <div className="flex justify-between text-base font-medium text-white">
             <h3 className="ml-1 text-sm font-medium">
-              <a href='#'>{dadabadi.title}</a>
+              <a href='#'>{dadabadi.titlehin}</a>
             </h3>
             <div className="flex justify-between gap-1 text-base font-medium text-keshar-saffronRedDark">
               <GetIcon type="dharmshala" val={dadabadi.dharmshala} />
@@ -105,13 +113,13 @@ export function Card({
         
         <div className="flex py-2">
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-            {(dadabadi.image1 !== "") ? <img
-              src={dadabadi.image1}
-              alt='alt'
+            {(dadabadi.image1 !== "") ? <Image
+              src={dadabadi.image1} width={500} height={500}  alt={dadabadi.title}
+              
               className="h-full w-full object-cover object-center"
-            /> : <img
+            /> : <Image
             src='/images/landingpage.jpg'
-            alt='alt'
+            alt={dadabadi.title}
             className="h-full w-full object-cover object-center"
           />}
           </div>
@@ -120,7 +128,7 @@ export function Card({
             <div>
               <div className="flex justify-between text-base font-medium text-white">
                 <h3 className="antialiased text-lg font-semibold">
-                  <a href='#'>{dadabadi.titlehin}</a>
+                  <a href='#'>{dadabadi.title}</a>
                 </h3>
                 {/* <p className="ml-4">20 rs</p> */}
               </div>

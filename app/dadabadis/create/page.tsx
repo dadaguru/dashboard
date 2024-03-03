@@ -11,7 +11,8 @@ import { Metadata } from 'next';
 import CreateDadabadiEmailForm from '@/app/ui/dadabadis/create-dadabadi-email-form';
 
 export const metadata: Metadata = {
-  title: 'Customers',
+  title: 'Create',
+  description: 'Dadabari'
 };
 
 export default async function Page() {

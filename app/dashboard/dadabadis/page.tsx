@@ -10,7 +10,12 @@ import { fetchDadabadisPages } from '@/app/lib/dadabadidata';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Invoices',
+  title: 'List Admin',
+  description: 'Dadabari',
+  robots: {
+    index : false,  // don't index on search engines as it is admin page
+    follow: true  // but include links on this page in search indexes so links on the page will be crawled
+  }
 };
 
 export default async function Page({

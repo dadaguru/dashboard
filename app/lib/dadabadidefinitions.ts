@@ -48,6 +48,15 @@ export type LatestDadabadiRaw = {
   image1: string;
 };
 
+// The database returns a number for amount, but we later format it to a string with the formatCurrency function
+export type DadabadiRawSEO = {
+  id: string;
+  title: string;
+  created_at: string;
+  published: string;
+  image1: string;
+};
+
 export type DadabadiTable = {
 id: string;
 title: string;

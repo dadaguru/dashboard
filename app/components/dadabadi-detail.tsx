@@ -3,6 +3,13 @@ import { DadabadiForm } from "../lib/dadabadidefinitions";
 import Link from "next/link";
 import { HandRaisedIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Detail',
+  description: 'Dadabari'
+};
+
 
 export default function DadabadiDetail({
   dadabadi
@@ -20,11 +27,11 @@ export default function DadabadiDetail({
             <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
               <div className="sticky top-0 overflow-hidden ">
                 <div className="relative mb-6 lg:mb-10 lg:h-96">                  
-                  <Image width={500} height={500} src={dadabadi.image1} alt={dadabadi.title} className="object-contain w-full h-full" />
+                  <Image width={500} height={500} src={dadabadi.image1} alt={dadabadi.title} className="object-contain w-auto h-full" />
                   {/* <img className="object-contain w-full lg:h-full" src="https://i.postimg.cc/0jwyVgqz/Microprocessor1-removebg-preview.png" alt="" /> */}                    
                 </div>
                 <div className="relative mb-6 lg:mb-10 lg:h-96">                  
-                  <Image width={500} height={500} src={dadabadi.image2} alt={dadabadi.title} className="object-contain w-full h-full" />
+                  <Image width={500} height={500} src={dadabadi.image2} alt={dadabadi.title} className="object-contain w-auto h-full" />
                   {/* <img className="object-contain w-full lg:h-full" src="https://i.postimg.cc/0jwyVgqz/Microprocessor1-removebg-preview.png" alt="" /> */}                    
                 </div>
               </div>

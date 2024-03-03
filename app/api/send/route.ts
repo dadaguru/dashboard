@@ -21,7 +21,7 @@ export async function POST(request:NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'Dadabadi <info@dadabadi.dadaguru.in>',
       to: senderEmail as string,
-      //cc: ["dadaguruweb@gmail.com"],
+      cc: ["dadaguruweb@gmail.com"],
       //bcc: "yatindrajain@gmail.com",
       subject: "Jai Jinendra from www.dadaguru.in",
       reply_to: senderEmail as string,
@@ -40,8 +40,7 @@ export async function POST(request:NextRequest) {
 
     if(data){
       return NextResponse.json({message : 'Email sent successfully'});
-    }
-    console.log("hahahaha")
+    }    
     //redirect('/dadabadis/contact');
   } catch (error) {
     return NextResponse.json({ error });

@@ -5,19 +5,22 @@ import LatestDadabadis from '@/app/components/latest-invoices';
 import { mukta } from '@/app/ui/fonts';
 import CardWrapper from '@/app/ui/dashboard/cards';
 import { Suspense } from 'react';
-import { LatestInvoicesSkeleton, RevenueChartSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
- 
-export default async function Page() {
-  
-  
+import { LatestInvoicesSkeleton, RevenueChartSkeleton, CardsSkeleton, DashboardCardsSkeleton } from '@/app/ui/skeletons';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Dashboard Admin',
+  description: 'Dadabari'
+};
+
+export default async function Page() {
   return (
     <main>
       <h1 className={`${mukta.className} mb-4 text-keshar-saffronRedDark text-xl md:text-2xl`}>
         Dashboard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <Suspense fallback={<CardsSkeleton />}>
+      <Suspense fallback={<DashboardCardsSkeleton />}>
           <CardWrapper />
         </Suspense>
       </div>

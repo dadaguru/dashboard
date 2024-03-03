@@ -90,8 +90,8 @@ export const ContactEmailTemplate = ({
       <Preview>दादाबाड़ी वेब साईट से सादर जय जिनेन्द्र</Preview>
       <Body style={main}>
         <Container>
-          <Section style={logo}>
-            <Img src={`${baseUrl}/images/yelp-logo.png`} alt="logo" width="300" height="300" />
+          <Section style={logo}>          
+            <Img src='https://dadabadi.dadaguru.in/images/yelp-logo.png' alt="logo"/>
           </Section>
 
           <Section style={content}>
@@ -99,7 +99,7 @@ export const ContactEmailTemplate = ({
               <Img
                 style={image}
                 width={620}
-                src={`${baseUrl}/images/yelp-header.png`}
+                src='https://dadabadi.dadaguru.in/images/yelp-header.png'
               />
             </Row>
 
@@ -148,7 +148,7 @@ export const ContactEmailTemplate = ({
             <Img
               style={image}
               width={620}
-              src={`${baseUrl}/images/yelp-footer.png`}
+              src='https://dadabadi.dadaguru.in/images/yelp-footer.png'
             />
           </Section>
 

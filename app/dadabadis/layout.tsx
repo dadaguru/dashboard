@@ -5,11 +5,11 @@ import SideNavPublic from '@/app/components/sidenavpublic';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Dadabadi Dashboard',
+    template: '%s | Dadabadi',
     default: 'Dadabadi Dashboard',
   },
-  description: 'The official Next.js Learn Dashboard built with App Router.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  description: 'The Website app containing information and details of all the dadabadis around the world. It is dedicated to all the Jain and Jains around the world of Khartar Gachha sect, Dada Jin Datta suri, Jin Chandra Suri, Jin Kushal Suri, Jin Chandra suri',
+  metadataBase: new URL('https://dadabadi.dadaguru.in'),
 };
 
 export default function RootLayout({

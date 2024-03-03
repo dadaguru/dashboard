@@ -8,32 +8,33 @@ import {
 } from '@heroicons/react/24/outline';
 import { mukta } from '@/app/ui/fonts';
 import { fetchCardData } from '@/app/lib/data';
+import { fetchCardDataDadabadis } from '@/app/lib/dadabadidata';
 
 const iconMap = {
-  collected: BuildingLibraryIcon,
-  customers: InboxArrowDownIcon,
+  dadabadis: BuildingLibraryIcon,
+  emails: InboxArrowDownIcon,
   pending: ClockIcon,
-  invoices: UserGroupIcon,
+  users: UserGroupIcon,
 };
 
 export default async function CardWrapper() {
-  const {
-    numberOfInvoices,
-    numberOfCustomers,
-    totalPaidInvoices,
-    totalPendingInvoices,
-  } = await fetchCardData();
+  const {    
+    numberOfDadabadis,
+    numberOfPublishPending,
+    totalUsers,
+    totalEmails,
+  } = await fetchCardDataDadabadis();
   return (
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}
 
-      <Card title="Total Dadabadis" value="981" type="collected" />
-      <Card title="Publish Pending" value="121" type="pending" />
-      <Card title="Total Users" value="781" type="invoices" />
+      <Card title="Total Dadabadis" value={numberOfDadabadis} type="dadabadis" />
+      <Card title="Publish Pending" value={numberOfPublishPending} type="pending" />
+      <Card title="Total Users" value="781" type="users" />
       <Card
         title="Total Emails"
         value="2993"
-        type="customers"
+        type="emails"
       />
     </>
   );
@@ -46,7 +47,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: 'invoices' | 'customers' | 'pending' | 'collected';
+  type: 'users' | 'emails' | 'pending' | 'dadabadis';
 }) {
   const Icon = iconMap[type];
 

@@ -6,14 +6,15 @@ import { CreateDadabadi } from '@/app/ui/dadabadis/buttons';
 import { mukta } from '@/app/ui/fonts';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
-import { fetchDadabadisPages } from '@/app/lib/dadabadidata';
+import { fetchDadabadisPublishedPages } from '@/app/lib/dadabadidata';
 import { Metadata } from 'next';
 import CardWrapper from '@/app/components/cards';
 import { CardsSkeleton } from '@/app/ui/skeletons';
 import { BedDouble, Utensils } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Invoices',
+  title: 'Dadabari List',
+  description: 'Dadabadi'
 };
 
 export default async function Page({
@@ -27,7 +28,7 @@ export default async function Page({
    
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
-  const totalPages = await fetchDadabadisPages(query);
+  const totalPages = await fetchDadabadisPublishedPages(query);
   return (
     <main>     
       <div className="w-full">

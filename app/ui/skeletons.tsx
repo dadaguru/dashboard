@@ -31,6 +31,17 @@ export function CardsSkeleton() {
   );
 }
 
+export function DashboardCardsSkeleton() {
+  return (
+    <>
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />      
+    </>
+  );
+}
+
 export function RevenueChartSkeleton() {
   return (
     <div className={`${shimmer} relative w-full overflow-hidden md:col-span-4`}>

@@ -1,5 +1,11 @@
 import DadabadiLogo from '@/app/ui/dadabadi-logo';
 import LoginForm from '@/app/ui/login-form';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admin Login Page',
+  description: 'Dadabari'
+};
  
 export default function LoginPage() {
   return (

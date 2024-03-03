@@ -12,7 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import ContactForm from '@/app/ui/dadabadis/contact-form';
 
 export const metadata: Metadata = {
-  title: 'Customers',
+  title: 'Contact',
 };
 
 export default async function Page() {

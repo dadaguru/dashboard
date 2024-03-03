@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { mukta } from '@/app/ui/fonts';
 import { fetchLatestDadabadis } from '@/app/lib/dadabadidata';
 
+
 export default async function LatestDadabadis() {
   const latestDadabadis = await fetchLatestDadabadis();
   return (
